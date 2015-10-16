@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:editTextStyle">@style/EditTextStyle</item>
+    </style>
+
+    <style name="EditTextStyle" parent="Widget.AppCompat.EditText">
+        <item name="colorControlActivated">@color/white</item>
+        <item name="colorControlHighlight">@color/white</item>
+    </style>
+</resources>

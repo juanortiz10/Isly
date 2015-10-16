@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="take_in">Take In</string>
+    <string name="password">Password</string>
+    <string name="user">User</string>
+    <string name="login">Login</string>
+    <string name="Register">Register</string>
+</resources>

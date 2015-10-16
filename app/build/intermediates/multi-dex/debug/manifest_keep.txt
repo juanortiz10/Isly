@@ -1,0 +1,12 @@
+-keep class null {
+    <init>();
+    void attachBaseContext(android.content.Context);
+}
+-keep class project.com.isly.MainActivity { <init>(); }
+-keep class project.com.isly.Login { <init>(); }
+-keep public class * extends android.app.backup.BackupAgent {
+    <init>();
+}
+-keep public class * extends java.lang.annotation.Annotation {
+    *;
+}

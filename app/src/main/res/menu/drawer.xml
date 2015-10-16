@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/home"
+            android:checked="false"
+            android:icon="@drawable/home"
+            android:title="@string/home" />
+
+        <item
+            android:id="@+id/add"
+            android:checked="false"
+            android:icon="@drawable/take"
+            android:title="@string/add" />
+
+        <item
+            android:id="@+id/list"
+            android:checked="false"
+            android:icon="@drawable/lists"
+            android:title="@string/take_ly" />
+
+        <item
+            android:id="@+id/statistics"
+            android:checked="false"
+            android:icon="@drawable/statistics"
+            android:title="@string/statistics" />
+
+
+    </group>
+</menu>
