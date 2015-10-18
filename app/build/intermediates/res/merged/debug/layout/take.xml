@@ -7,15 +7,50 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin">
-    <TextView
-        android:layout_marginTop="100sp"
-        android:textSize="50sp"
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Take"
-        android:id="@+id/textView2"
-        android:layout_gravity="center_horizontal" />
+        android:layout_marginTop="37dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+    <Button
+        android:layout_width="88dp"
+        android:id="@+id/btn"
+        style="@style/myButton"
+        android:textColor="@color/white"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:text="@string/takely"
+        android:layout_height="36dp"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/btnCancel"
+        android:layout_toStartOf="@+id/btnCancel" />
+
+    <Button
+        android:layout_height="36dp"
+        android:layout_width="88dp"
+        android:text="@string/cancel"
+        android:id="@+id/btnCancel"
+        android:layout_marginLeft="3dp"
+        android:background="@color/white"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="81dp"
+        android:layout_marginEnd="81dp" />
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/rv"
+        android:layout_below="@+id/relativeLayout"
+        android:layout_alignRight="@+id/view"
+        android:layout_alignEnd="@+id/view"
+        android:layout_marginTop="34dp" />
+
     <android.support.design.widget.FloatingActionButton
         android:layout_width="56dp"
         android:layout_height="56dp"
@@ -27,5 +62,6 @@
         app:pressedTranslationZ="12dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-</RelativeLayout><!-- From: file:/home/juanortizjr/Desktop/Isly/app/src/main/res/layout/take.xml -->
+        android:layout_alignParentEnd="true"
+        android:id="@+id/view" />
+</RelativeLayout><!-- From: file:/home/juan/Escritorio/Isly/app/src/main/res/layout/take.xml -->

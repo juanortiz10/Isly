@@ -2,7 +2,10 @@
 <android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:textColor="@color/white"
+    app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
     android:background="@color/colorPrimary"
     android:paddingTop="0sp"
     android:elevation="2sp">
-</android.support.v7.widget.Toolbar><!-- From: file:/home/juanortizjr/Desktop/Isly/app/src/main/res/layout/toolbar.xml -->
+</android.support.v7.widget.Toolbar><!-- From: file:/home/juan/Escritorio/Isly/app/src/main/res/layout/toolbar.xml -->

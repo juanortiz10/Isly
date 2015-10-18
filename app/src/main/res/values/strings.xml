@@ -19,4 +19,10 @@
     <string name="Register">Register</string>
     <string name="error_incorrect">Your credentials are wrong</string>
     <string name="empty_field">some field is empty</string>
+    <string name="logout">Logout</string>
+    <string name="success_logout">Successfully logout!</string>
+    <string name="takely">TakeLy</string>
+    <string name="cancel">Cancel</string>
+    <string name="id">Matricula</string>
+    <string name="mac_address">Direccion MAC</string>
 </resources>

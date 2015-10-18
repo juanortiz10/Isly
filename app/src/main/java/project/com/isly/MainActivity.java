@@ -1,13 +1,16 @@
 package project.com.isly;
 
+import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -30,11 +33,21 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //Initialize home as a first view
+        Fragment home=new ContentFragment();
+        android.support.v4.app.FragmentTransaction fragmentTransaction1 = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction1.replace(R.id.frame, home);
+        fragmentTransaction1.commit();
+
+
+        //States of drawer menu
         int[][] states = new int[][] {
                 new int[] {android.R.attr.state_checked},
                 new int[] {-android.R.attr.state_checked},
 
         };
+
+        //Colors for the corresponding menu's states
         int[] colors = new int[] {
                 Color.rgb(10,155,175),
                 Color.rgb(112,121,122)
@@ -44,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
         // Initializing Toolbar and setting it as the actionbar
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        toolbar.setTitle(R.string.home);
 
         //Initializing NavigationView
         navigationView = (NavigationView) findViewById(R.id.navigation_view);
@@ -61,43 +75,38 @@ public class MainActivity extends AppCompatActivity {
 
                 //Closing drawer on item click
                 drawerLayout.closeDrawers();
-
+                Fragment fragment=null;
                 //Check to see which item was being clicked and perform appropriate action
                 switch (menuItem.getItemId()){
-                    //Replacing the main content with ContentFragment Which is our Inbox View;
                     case R.id.home:
-                        ContentFragment fragment = new ContentFragment();
-                        android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                        fragmentTransaction.replace(R.id.frame,fragment);
-                        fragmentTransaction.commit();
-                        return true;
-
-                    // For rest of the options we just show a toast on click
+                        fragment = new ContentFragment();
+                        toolbar.setTitle(R.string.home);
+                        break;
                     case R.id.add:
-                        Add add = new Add();
-                        android.support.v4.app.FragmentTransaction addTransaction = getSupportFragmentManager().beginTransaction();
-                        addTransaction.replace(R.id.frame,add);
-                        addTransaction.commit();
-                        return true;
+                        fragment= new Add();
+                        toolbar.setTitle(R.string.add);
+                        break;
                     case R.id.list:
-                        Take take=new Take();
-                        android.support.v4.app.FragmentTransaction takeTransaction = getSupportFragmentManager().beginTransaction();
-                        takeTransaction.replace(R.id.frame,take);
-                        takeTransaction.commit();
-                        return true;
+                        fragment=new Take();
+                        toolbar.setTitle(R.string.take_ly);
+                        break;
                     case R.id.statistics:
-                        Statistics statistics=new Statistics();
-                        android.support.v4.app.FragmentTransaction statisticsTransaction = getSupportFragmentManager().beginTransaction();
-                        statisticsTransaction.replace(R.id.frame,statistics);
-                        statisticsTransaction.commit();
-                        return true;
+                        fragment=new Statistics();
+                        toolbar.setTitle(R.string.statistics);
+                        break;
+                    case R.id.logout:
+                        Toast.makeText(getApplicationContext(),R.string.success_logout,Toast.LENGTH_SHORT).show();
+                        Intent intent=new Intent(getApplicationContext(), Login.class);
+                        startActivity(intent);
                     default:
-                        ContentFragment fragment1 = new ContentFragment();
-                        android.support.v4.app.FragmentTransaction fragmentTransaction1 = getSupportFragmentManager().beginTransaction();
-                        fragmentTransaction1.replace(R.id.frame,fragment1);
-                        fragmentTransaction1.commit();
-                        return true;
+                        fragment = new ContentFragment();
+                        toolbar.setTitle(R.string.home);
+                        break;
                 }
+                android.support.v4.app.FragmentTransaction fragmentTransaction1 = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction1.replace(R.id.frame,fragment);
+                fragmentTransaction1.commit();
+                return false;
             }
         });
 
@@ -147,5 +156,10 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
     }
 }

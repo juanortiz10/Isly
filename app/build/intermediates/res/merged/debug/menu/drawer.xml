@@ -4,20 +4,20 @@
 
         <item
             android:id="@+id/home"
-            android:checked="false"
+            android:checked="true"
             android:icon="@drawable/home"
             android:title="@string/home" />
 
         <item
             android:id="@+id/add"
             android:checked="false"
-            android:icon="@drawable/take"
+            android:icon="@drawable/lists"
             android:title="@string/add" />
 
         <item
             android:id="@+id/list"
             android:checked="false"
-            android:icon="@drawable/lists"
+            android:icon="@drawable/take"
             android:title="@string/take_ly" />
 
         <item
@@ -25,7 +25,10 @@
             android:checked="false"
             android:icon="@drawable/statistics"
             android:title="@string/statistics" />
-
-
+        <item
+            android:id="@+id/logout"
+            android:checked="false"
+            android:icon="@drawable/logout"
+            android:title="@string/logout" />
     </group>
-</menu><!-- From: file:/home/juanortizjr/Desktop/Isly/app/src/main/res/menu/drawer.xml -->
+</menu><!-- From: file:/home/juan/Escritorio/Isly/app/src/main/res/menu/drawer.xml -->

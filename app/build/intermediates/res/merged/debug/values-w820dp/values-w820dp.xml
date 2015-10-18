@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/home/juanortizjr/Desktop/Isly/app/src/main/res/values-w820dp/dimens.xml -->
+    <!-- From: file:/home/juan/Escritorio/Isly/app/src/main/res/values-w820dp/dimens.xml -->
     <eat-comment/>
     <dimen name="activity_horizontal_margin">64dp</dimen>
-    <!-- From: file:/home/juanortizjr/Desktop/Isly/app/src/main/res/values-w820dp/strings.xml -->
+    <!-- From: file:/home/juan/Escritorio/Isly/app/src/main/res/values-w820dp/strings.xml -->
     <eat-comment/>
     <string name="Register">Register</string>
+    <string name="cancel">Cancel</string>
+    <string name="id">Matricula</string>
     <string name="login">Login</string>
+    <string name="mac_address">Direccion MAC</string>
     <string name="password">Password</string>
     <string name="take_in">Take In</string>
     <string name="user">User</string>

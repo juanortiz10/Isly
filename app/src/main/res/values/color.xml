@@ -4,4 +4,5 @@
     <item name="colorPrimaryDark" type="color">#015F6C</item>
     <item name="white" type="color">#FFF</item>
     <item name="letter_color" type="color">#2C3336</item>
+    <item name="button_background" type="color">#FFB20A</item>
 </resources>

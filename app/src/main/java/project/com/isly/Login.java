@@ -66,4 +66,10 @@ public class Login extends Activity{
 
         return super.onOptionsItemSelected(item);
     }
+
+    //This method disables the back button if nothing is typed inside it
+    @Override
+    public void onBackPressed() {
+    }
+
 }
