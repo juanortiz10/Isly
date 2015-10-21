@@ -25,4 +25,9 @@
     <string name="cancel">Cancel</string>
     <string name="id">Matricula</string>
     <string name="mac_address">Direccion MAC</string>
+
+    <string-array name="test">
+        <item>Testing</item>
+        <item>Testing</item>
+    </string-array>
 </resources>

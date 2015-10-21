@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- From: file:/home/juan/Escritorio/Isly/app/src/main/res/values-v21/strings.xml -->
+    <eat-comment/>
+    <string-array name="test">
+        <item>Testing</item>
+        <item>Testing</item>
+    </string-array>
     <!-- From: file:/home/juan/Escritorio/Isly/app/build/intermediates/exploded-aar/com.android.support/design/22.2.0/res/values-v21/values-v21.xml -->
     <eat-comment/>
     <dimen name="navigation_padding_top_default">24dp</dimen>

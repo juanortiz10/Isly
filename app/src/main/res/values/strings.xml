@@ -25,4 +25,5 @@
     <string name="cancel">Cancel</string>
     <string name="id">Matricula</string>
     <string name="mac_address">Direccion MAC</string>
+    <string name="newList">New</string>
 </resources>
