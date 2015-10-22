@@ -52,9 +52,11 @@
     <color name="dim_foreground_disabled_material_light">#80323232</color>
     <color name="dim_foreground_material_dark">#ffbebebe</color>
     <color name="dim_foreground_material_light">#ff323232</color>
+    <!-- From: file:/home/juan/Escritorio/Isly/app/src/main/res/values/color.xml -->
+    <eat-comment/>
+    <item name="error_color" type="color">#ED5F5F</item>
     <!-- From: file:/home/juan/Escritorio/Isly/app/build/intermediates/exploded-aar/com.android.support/design/22.2.0/res/values/values.xml -->
     <eat-comment/>
-    <color name="error_color">#FFDD2C00</color>
     <color name="fab_stroke_end_inner_color">#0A000000</color>
     <color name="fab_stroke_end_outer_color">#0F000000</color>
     <color name="fab_stroke_top_inner_color">#1AFFFFFF</color>
@@ -63,6 +65,11 @@
     <eat-comment/>
     <color name="highlighted_text_material_dark">#6680cbc4</color>
     <color name="highlighted_text_material_light">#66009688</color>
+    <!-- From: file:/home/juan/Escritorio/Isly/app/src/main/res/values/color.xml -->
+    <eat-comment/>
+    <item name="hint_color" type="color">#A2A5A6</item>
+    <!-- From: file:/home/juan/Escritorio/Isly/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
+    <eat-comment/>
     <color name="hint_foreground_material_dark">@color/bright_foreground_disabled_material_dark</color>
     <color name="hint_foreground_material_light">@color/bright_foreground_disabled_material_light</color>
     <!-- From: file:/home/juan/Escritorio/Isly/app/src/main/res/values/color.xml -->
@@ -340,11 +347,16 @@
     <string name="hello_world">Hello world!</string>
     <string name="home">Home</string>
     <string name="id">Matricula</string>
+    <string name="key_list">Key List</string>
+    <string name="list_name">List Name</string>
     <string name="login">Login</string>
     <string name="logout">Logout</string>
     <string name="mac_address">Direccion MAC</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="newList">New</string>
+    <string name="new_list_error">Sorry!, you have some empty fields</string>
+    <string name="ok">Ok</string>
     <string name="openDrawer">Navigation View Closed</string>
     <string name="password">Password</string>
     <string name="statistics">Statistics</string>

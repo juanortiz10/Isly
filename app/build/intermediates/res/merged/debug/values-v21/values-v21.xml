@@ -23,11 +23,15 @@
     <string name="hello_world">Hello world!</string>
     <string name="home">Home</string>
     <string name="id">Matricula</string>
+    <string name="key_list">Key List</string>
+    <string name="list_name">List Name</string>
     <string name="login">Login</string>
     <string name="logout">Logout</string>
     <string name="mac_address">Direccion MAC</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="new_list_error">Sorry!, you have some empty fields</string>
+    <string name="ok">Ok</string>
     <string name="openDrawer">Navigation View Closed</string>
     <string name="password">Password</string>
     <string name="statistics">Statistics</string>

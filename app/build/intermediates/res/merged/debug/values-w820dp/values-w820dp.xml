@@ -8,8 +8,12 @@
     <string name="Register">Register</string>
     <string name="cancel">Cancel</string>
     <string name="id">Matricula</string>
+    <string name="key_list">Key List</string>
+    <string name="list_name">List Name</string>
     <string name="login">Login</string>
     <string name="mac_address">Direccion MAC</string>
+    <string name="new_list_error">Sorry!, you have some empty fields</string>
+    <string name="ok">Ok</string>
     <string name="password">Password</string>
     <string name="take_in">Take In</string>
     <string name="user">User</string>

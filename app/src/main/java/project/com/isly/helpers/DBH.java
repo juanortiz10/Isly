@@ -35,26 +35,27 @@ public class DBH extends SQLiteOpenHelper {
     }
 
     //Adds a new list into a DB
-    public static void setNewList(Context ctx,String nameList, String keyList, String isActive){
+    public static void setNewList(Context ctx,Lists lists){
+        DBH conection = new DBH(ctx);
+        SQLiteDatabase db = conection.getReadableDatabase();
         try {
-            DBH conection = new DBH(ctx);
-            SQLiteDatabase db = conection.getReadableDatabase();
-
             ContentValues values = new ContentValues();
-            values.put(MyTable.TableInfo.name_list, nameList);
-            values.put(MyTable.TableInfo.key_list, keyList);
-            values.put(MyTable.TableInfo.is_active, isActive);
+            values.put(MyTable.TableInfo.name_list, lists.getName_lst());
+            values.put(MyTable.TableInfo.key_list, lists.getKey_list());
+            values.put(MyTable.TableInfo.is_active, lists.getIsActive());
 
             db.insert(MyTable.TableInfo.lists_table, null, values);
             Toast.makeText(ctx,"List Added Correctly",Toast.LENGTH_SHORT).show();
         }catch (Exception ex){
             Toast.makeText(ctx,"Error",Toast.LENGTH_SHORT).show();
+        }finally {
+            db.close();
         }
     }
     //Method which loads the available lists
-    public static ArrayList<Lists> loadLists(Context ctx){
+    public static ArrayList<String> loadLists(Context ctx){
         try{
-            ArrayList arrayList=new ArrayList();
+            ArrayList<String> arrayList=new ArrayList<String>();
             DBH conection = new DBH(ctx);
             String sql = "SELECT * FROM "+MyTable.TableInfo.lists_table;
             SQLiteDatabase sq=conection.getWritableDatabase();
@@ -62,11 +63,7 @@ public class DBH extends SQLiteOpenHelper {
 
             if(cr.moveToFirst()){
                 do{
-                    Lists lists=new Lists();
-                    lists.setIsActive(cr.getString(cr.getColumnIndex(MyTable.TableInfo.is_active)));
-                    lists.setKey_list(cr.getString(cr.getColumnIndex(MyTable.TableInfo.key_list)));
-                    lists.setName_lst(cr.getString(cr.getColumnIndex(MyTable.TableInfo.name_list)));
-                    arrayList.add(lists);
+                    arrayList.add(cr.getString(cr.getColumnIndex(MyTable.TableInfo.name_list)));
                 }while(cr.moveToNext());
             }
             conection.close();

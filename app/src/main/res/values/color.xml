@@ -5,4 +5,6 @@
     <item name="white" type="color">#FFF</item>
     <item name="letter_color" type="color">#2C3336</item>
     <item name="button_background" type="color">#FFB20A</item>
+    <item name="hint_color" type="color">#A2A5A6</item>
+    <item name="error_color" type="color">#ED5F5F</item>
 </resources>

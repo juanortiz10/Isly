@@ -9,6 +9,15 @@ public class Lists {
     private String key_list;
     private String isActive;
 
+    public Lists(){
+
+    }
+
+    public Lists(String name_lst,String key_list,String isActive){
+        this.name_lst=name_lst;
+        this.key_list=key_list;
+        this.isActive=isActive;
+    }
     public String getId_list() {
         return id_list;
     }

@@ -1,15 +1,28 @@
 package project.com.isly.fragments;
 
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.SimpleCursorAdapter;
 import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import org.w3c.dom.Text;
+
+import java.util.ArrayList;
 
 import project.com.isly.R;
 import project.com.isly.helpers.DBH;
@@ -27,26 +40,54 @@ public class Add extends Fragment {
         View v = inflater.inflate(R.layout.add,container,false);
         spinnerListas=(Spinner)v.findViewById(R.id.spinnerListas);
 
-        ArrayAdapter<Lists> adapter = new ArrayAdapter<>(getActivity(),
+        ArrayAdapter adapter = new ArrayAdapter<>(getActivity(),
                 android.R.layout.simple_spinner_item, DBH.loadLists(getActivity().getApplicationContext()));
         adapter.setDropDownViewResource(android.R.layout.simple_list_item_1);
-
 
         btnNewList=(Button)v.findViewById(R.id.btnNewList);
         btnNewList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Do a dialog input
-                DBH.setNewList(getActivity().getApplicationContext(),null,null,null);
+                LayoutInflater layoutInflater= LayoutInflater.from(getActivity().getApplicationContext());
+                View prompt= layoutInflater.inflate(R.layout.dialog_new_list, null);
+
+                AlertDialog.Builder alertDialog=new AlertDialog.Builder(getActivity());
+                alertDialog.setView(prompt);
+
+                final EditText etNameList= (EditText) prompt.findViewById(R.id.etNameList);
+                final EditText etKeyList=(EditText) prompt.findViewById(R.id.etKeyList);
+                final TextView tvErrorList=(TextView) prompt.findViewById(R.id.tvErrorList);
+
+                alertDialog
+                        .setTitle(R.string.newList)
+                        .setIcon(R.drawable.add_list)
+                        .setCancelable(true)
+                        .setPositiveButton(R.string.ok,new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                try {
+                                    if(etNameList.getText().toString().trim().equals("") || etKeyList.getText().toString().trim().equals("")){
+                                        tvErrorList.setText(R.string.new_list_error);
+                                    }else{
+                                        DBH.setNewList(getActivity().getApplicationContext(),new Lists(etNameList.getText().toString().trim(),etKeyList.getText().toString().trim(),"0"));
+                                    }
+                                }catch (Exception ex){
+                                    Toast.makeText(getActivity().getApplicationContext(),"System Error",Toast.LENGTH_LONG).show();
+                                }
+                            }
+                        })
+                        .setNegativeButton(R.string.cancel,
+                                new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int id) {
+                                        dialog.cancel();
+                                    }
+                                });
+
+                        AlertDialog alert=alertDialog.create();
+                        alert.show();
             }
         });
         spinnerListas.setAdapter(adapter);
-        spinnerListas.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                //Method to select the active list to takely
-            }
-        });
+
         return v;
     }
 }

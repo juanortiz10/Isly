@@ -9,6 +9,7 @@
     <string name="closeDrawer">Navigation View</string>
     <string name="openDrawer">Navigation View Closed</string>
     <string name="home">Home</string>
+    <string name="ok">Ok</string>
     <string name="add">Add List</string>
     <string name="take_ly">Take list!</string>
     <string name="statistics">Statistics</string>
@@ -26,4 +27,7 @@
     <string name="id">Matricula</string>
     <string name="mac_address">Direccion MAC</string>
     <string name="newList">New</string>
+    <string name="list_name">List Name</string>
+    <string name="key_list">Key List</string>
+    <string name="new_list_error">Sorry!, you have some empty fields</string>
 </resources>
