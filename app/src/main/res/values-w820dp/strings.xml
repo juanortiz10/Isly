@@ -12,4 +12,5 @@
     <string name="key_list">Key List</string>
     <string name="ok">Ok</string>
     <string name="new_list_error">Sorry!, you have some empty fields</string>
+    <string name="set_active">Set Active</string>
 </resources>

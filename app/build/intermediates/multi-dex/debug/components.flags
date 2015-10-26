@@ -1,14 +1,14 @@
--injars /home/juan/Escritorio/Isly/app/build/intermediates/multi-dex/debug/allclasses.jar
--outjars /home/juan/Escritorio/Isly/app/build/intermediates/multi-dex/debug/componentClasses.jar
+-injars /home/juanortizjr/Desktop/Isly/app/build/intermediates/multi-dex/debug/allclasses.jar
+-outjars /home/juanortizjr/Desktop/Isly/app/build/intermediates/multi-dex/debug/componentClasses.jar
 
--libraryjars /home/juan/android-sdk-linux/build-tools/23.0.1/lib/shrinkedAndroid.jar
+-libraryjars /home/juanortizjr/android-sdk-linux/build-tools/23.0.1/lib/shrinkedAndroid.jar
 
 -forceprocessing
 -dontoptimize
 -dontobfuscate
 -dontpreverify
 -dontwarn
--printconfiguration /home/juan/Escritorio/Isly/app/build/intermediates/multi-dex/debug/components.flags
+-printconfiguration /home/juanortizjr/Desktop/Isly/app/build/intermediates/multi-dex/debug/components.flags
 
 
 -keep class null {

@@ -22,6 +22,7 @@ import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 
 import project.com.isly.R;
@@ -33,19 +34,32 @@ import project.com.isly.models.Lists;
  */
 public class Add extends Fragment {
     private Spinner spinnerListas;
-    private Button btnNewList;
+    private Button btnSetActive;
+    private android.support.design.widget.FloatingActionButton fabAdd0;
     protected ArrayAdapter<CharSequence> adapter;
-
+    private String selected;
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.add,container,false);
         spinnerListas=(Spinner)v.findViewById(R.id.spinnerListas);
 
-        ArrayAdapter adapter = new ArrayAdapter<>(getActivity(),
+        final ArrayAdapter adapter = new ArrayAdapter<>(getActivity(),
                 android.R.layout.simple_spinner_item, DBH.loadLists(getActivity().getApplicationContext()));
         adapter.setDropDownViewResource(android.R.layout.simple_list_item_1);
 
-        btnNewList=(Button)v.findViewById(R.id.btnNewList);
-        btnNewList.setOnClickListener(new View.OnClickListener() {
+        btnSetActive=(Button)v.findViewById(R.id.btnSetActive);
+        btnSetActive.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(selected != null){
+
+                }else{
+
+                }
+            }
+        });
+
+        fabAdd0=(android.support.design.widget.FloatingActionButton)v.findViewById(R.id.fabAdd0);
+        fabAdd0.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 LayoutInflater layoutInflater= LayoutInflater.from(getActivity().getApplicationContext());
@@ -87,7 +101,17 @@ public class Add extends Fragment {
             }
         });
         spinnerListas.setAdapter(adapter);
+        spinnerListas.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                selected=adapter.getItem(position).toString();
+            }
 
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
         return v;
     }
 }

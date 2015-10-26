@@ -72,4 +72,8 @@ public class DBH extends SQLiteOpenHelper {
             return null;
         }
     }
+
+    public static boolean setNewActiveList(){
+        return false;
+    }
 }

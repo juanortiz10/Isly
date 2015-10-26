@@ -64,4 +64,4 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:id="@+id/view" />
-</RelativeLayout><!-- From: file:/home/juan/Escritorio/Isly/app/src/main/res/layout/take.xml -->
+</RelativeLayout><!-- From: file:/home/juanortizjr/Desktop/Isly/app/src/main/res/layout/take.xml -->

@@ -3,57 +3,39 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_centerHorizontal="true"
-    android:layout_centerInParent="true"
-    android:layout_centerVertical="true"
+    android:layout_height="match_parent"
+
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin">
-    <Button
-        android:layout_width="88dp"
-        android:id="@+id/btnNewList"
-        style="@style/myButton"
-        android:textColor="@color/white"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp"
-        android:text="@string/newList"
-        android:layout_height="36dp"
-        android:layout_alignBaseline="@+id/textView2"
-        android:layout_alignBottom="@+id/textView2"
-        android:layout_alignLeft="@+id/textView2"
-        android:layout_alignStart="@+id/textView2" />
-
-
-    <TextView
-        android:layout_marginTop="113dp"
-        android:textSize="20sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Active"
-        android:id="@+id/textView2"
-        android:layout_gravity="center_horizontal"
-        android:paddingBottom="@dimen/activity_vertical_margin"
-        android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin"
-        android:paddingTop="@dimen/activity_vertical_margin"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
 
     <Spinner
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/spinnerListas"
-        android:layout_centerHorizontal="true"
         android:background="@color/button_background"
         android:padding="10sp"
         android:textColor="@color/white"
         android:textSize="20sp"
         android:gravity="center"
-        android:layout_below="@+id/textView2">
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
     </Spinner>
+    <Button
+        android:layout_width="200dp"
+        android:id="@+id/btnSetActive"
+        style="@style/myButton"
+        android:textColor="@color/white"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:layout_marginTop="10sp"
+        android:text="@string/set_active"
+        android:layout_height="36dp"
+        android:layout_below="@+id/spinnerListas"
+        android:layout_centerHorizontal="true" />
+
     <android.support.design.widget.FloatingActionButton
         android:layout_width="56dp"
         android:layout_height="56dp"
@@ -65,5 +47,6 @@
         app:pressedTranslationZ="12dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
+        android:id="@+id/fabAdd0"
         android:layout_alignParentEnd="true" />
-</RelativeLayout><!-- From: file:/home/juan/Escritorio/Isly/app/src/main/res/layout/add.xml -->
+</RelativeLayout><!-- From: file:/home/juanortizjr/Desktop/Isly/app/src/main/res/layout/add.xml -->

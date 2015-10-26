@@ -55,4 +55,4 @@
         android:layout_below="@+id/relativeLayout"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10sp"/>
-</RelativeLayout><!-- From: file:/home/juan/Escritorio/Isly/app/src/main/res/layout/login.xml -->
+</RelativeLayout><!-- From: file:/home/juanortizjr/Desktop/Isly/app/src/main/res/layout/login.xml -->
