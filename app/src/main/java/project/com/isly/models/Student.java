@@ -6,10 +6,12 @@ package project.com.isly.models;
 public class Student {
     private String name;
     private String mac;
+    private String mat;
 
-    public Student(String name,String mac){
+    public Student(String name,String mat,String mac){
         this.name=name;
         this.mac=mac;
+        this.mat=mat;
     }
     public Student(){}
 
@@ -27,5 +29,13 @@ public class Student {
 
     public void setMac(String mac) {
         this.mac = mac;
+    }
+
+    public String getMat() {
+        return mat;
+    }
+
+    public void setMat(String mat) {
+        this.mat = mat;
     }
 }

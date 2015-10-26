@@ -22,6 +22,7 @@
     <string name="empty_field">some field is empty</string>
     <string name="logout">Logout</string>
     <string name="success_logout">Successfully logout!</string>
+    <string name="success_changed">List Successfully Changed to Active</string>
     <string name="takely">TakeLy</string>
     <string name="cancel">Cancel</string>
     <string name="id">Matricula</string>
@@ -29,6 +30,7 @@
     <string name="newList">New</string>
     <string name="list_name">List Name</string>
     <string name="key_list">Key List</string>
+    <string name="unexpected">Unexpected Error</string>
     <string name="new_list_error">Sorry!, you have some empty fields</string>
     <string name="set_active">Set Active</string>
 </resources>

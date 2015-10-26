@@ -31,6 +31,7 @@ import project.com.isly.models.Lists;
 
 /**
  * Created by juan on 13/10/15.
+ * Class used for the activity Add List and control your active lists
  */
 public class Add extends Fragment {
     private Spinner spinnerListas;
@@ -38,26 +39,46 @@ public class Add extends Fragment {
     private android.support.design.widget.FloatingActionButton fabAdd0;
     protected ArrayAdapter<CharSequence> adapter;
     private String selected;
+
+    /**
+     * Method which generates and inflates the view for the Fragment
+     * */
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.add,container,false);
         spinnerListas=(Spinner)v.findViewById(R.id.spinnerListas);
 
+        /**
+         * Array adapter calls all elements from the lists_table , then the
+         * adapter is ready to
+         * */
         final ArrayAdapter adapter = new ArrayAdapter<>(getActivity(),
                 android.R.layout.simple_spinner_item, DBH.loadLists(getActivity().getApplicationContext()));
         adapter.setDropDownViewResource(android.R.layout.simple_list_item_1);
 
+        /**
+         * Listener for the button set active which will be able to change our selected list to an active list
+         * wherever we want, changing is_active field from the local database to 1 and all of rest to 0.
+         * */
         btnSetActive=(Button)v.findViewById(R.id.btnSetActive);
         btnSetActive.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(selected != null){
-
+                    try {
+                        DBH.setNewActiveList(getActivity().getApplicationContext(),selected);
+                        Toast.makeText(getActivity().getApplicationContext(),R.string.success_changed,Toast.LENGTH_SHORT).show();
+                    }catch (Exception ex){
+                        Toast.makeText(getActivity().getApplicationContext(),R.string.unexpected,Toast.LENGTH_SHORT).show();
+                    }
                 }else{
-
+                    Toast.makeText(getActivity().getApplicationContext(),R.string.unexpected,Toast.LENGTH_SHORT).show();
                 }
             }
         });
-
+        /**
+         * FAB Button able to call the alertdialog like a pop up, this dialog is going to create the
+         * layout for the creation of new lists
+         * */
         fabAdd0=(android.support.design.widget.FloatingActionButton)v.findViewById(R.id.fabAdd0);
         fabAdd0.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -100,6 +121,12 @@ public class Add extends Fragment {
                         alert.show();
             }
         });
+
+        /**
+         * Setting the spinner adapter which is loaded from the lists_table where the groups are stored
+         * in a local storage, then the listener is able to put the name of the selected list ready to
+         * be changed when the user clicks on the SET ACTIVE button
+         * */
         spinnerListas.setAdapter(adapter);
         spinnerListas.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override

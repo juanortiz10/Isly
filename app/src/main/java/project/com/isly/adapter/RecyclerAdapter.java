@@ -14,7 +14,7 @@ import project.com.isly.models.Student;
 /**
  * Created by juan on 17/10/15.
  */
-public class RecyclerAdapter  extends RecyclerView.Adapter<RecyclerAdapter.ItemsViewHolder>{
+public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ItemsViewHolder>{
     List<Student> students;
 
     public RecyclerAdapter(List<Student> students){

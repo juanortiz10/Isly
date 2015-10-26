@@ -366,10 +366,12 @@
     <string name="status_bar_notification_info_overflow">999+</string>
     <!-- From: file:/home/juanortizjr/Desktop/Isly/app/src/main/res/values/strings.xml -->
     <eat-comment/>
+    <string name="success_changed">List Successfully Changed to Active</string>
     <string name="success_logout">Successfully logout!</string>
     <string name="take_in">Take In</string>
     <string name="take_ly">Take list!</string>
     <string name="takely">TakeLy</string>
+    <string name="unexpected">Unexpected Error</string>
     <string name="user">User</string>
     <!-- From: file:/home/juanortizjr/Desktop/Isly/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
     <eat-comment/>

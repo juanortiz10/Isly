@@ -16,6 +16,8 @@
     <string name="ok">Ok</string>
     <string name="password">Password</string>
     <string name="set_active">Set Active</string>
+    <string name="success_changed">List Successfully Changed to Active</string>
     <string name="take_in">Take In</string>
+    <string name="unexpected">Unexpected Error</string>
     <string name="user">User</string>
 </resources>

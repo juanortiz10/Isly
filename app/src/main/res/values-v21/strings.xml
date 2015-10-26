@@ -27,6 +27,8 @@
     <string name="mac_address">Direccion MAC</string>
     <string name="list_name">List Name</string>
     <string name="key_list">Key List</string>
+    <string name="unexpected">Unexpected Error</string>
+    <string name="success_changed">List Successfully Changed to Active</string>
     <string name="ok">Ok</string>
     <string name="new_list_error">Sorry!, you have some empty fields</string>
     <string name="set_active">Set Active</string>

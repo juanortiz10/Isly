@@ -24,17 +24,18 @@ import java.util.Set;
 
 import project.com.isly.R;
 import project.com.isly.adapter.RecyclerAdapter;
+import project.com.isly.helpers.DBH;
 import project.com.isly.models.Student;
 
 /**
  * Created by juan on 13/10/15.
+ * Activity which is able to show the easiest way to take list
  */
 public class Take extends Fragment implements View.OnClickListener {
     private BluetoothAdapter bluetoothAdapter;
     RecyclerView rv;
     List<Student> items;
     private static final int REQUEST_ENABLE_BT = 1;
-    private String devic3;
     private Button btn,btnCancel;
     RecyclerAdapter adapter;
 
@@ -58,7 +59,7 @@ public class Take extends Fragment implements View.OnClickListener {
         bluetoothAdapter= BluetoothAdapter.getDefaultAdapter();
         if(bluetoothAdapter==null){
             //If the bluetooth adapter is null or the mobile phone doesn't support bluetooth
-            Toast.makeText(getActivity().getApplicationContext(),"Error inesperado",Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity().getApplicationContext(),R.string.unexpected,Toast.LENGTH_SHORT).show();
         }else{
             if (bluetoothAdapter.isEnabled()){
                 //If the bluetooth is enabled (ON)
@@ -106,8 +107,12 @@ public class Take extends Fragment implements View.OnClickListener {
                 // add the name and the MAC address of the object to the arrayAdapter
                 if(device.getName()==null) name= "No available";
                 else name= device.getName();
-                items.add(new Student(name, device.getAddress()));
+                items.add(new Student(name,name, device.getAddress()));
                 adapter.notifyItemInserted(items.size());
+
+                if(!(DBH.checkIfExists(getActivity().getApplicationContext(),new Student(name,name, device.getAddress())))){
+                    DBH.addNewStudent(getActivity().getApplicationContext(),new Student(name,name, device.getAddress()));
+                }
                 Toast.makeText(getActivity().getApplicationContext(),device.getAddress(),Toast.LENGTH_SHORT).show();
             }
         }

@@ -2202,9 +2202,9 @@ containing a value of this type.
         public static final int action_mode_bar=0x7f0d0055;
         public static final int action_mode_bar_stub=0x7f0d0054;
         public static final int action_mode_close_button=0x7f0d003d;
-        public static final int action_settings=0x7f0d009a;
+        public static final int action_settings=0x7f0d0099;
         public static final int activity_chooser_view_content=0x7f0d003e;
-        public static final int add=0x7f0d0096;
+        public static final int add=0x7f0d0095;
         public static final int alertTitle=0x7f0d0048;
         public static final int always=0x7f0d002c;
         public static final int beginning=0x7f0d002a;
@@ -2262,10 +2262,10 @@ containing a value of this type.
         public static final int left=0x7f0d0025;
         public static final int line1=0x7f0d0089;
         public static final int line3=0x7f0d008d;
-        public static final int list=0x7f0d0097;
+        public static final int list=0x7f0d0096;
         public static final int listMode=0x7f0d000b;
         public static final int list_item=0x7f0d0042;
-        public static final int logout=0x7f0d0099;
+        public static final int logout=0x7f0d0098;
         public static final int media_actions=0x7f0d0087;
         public static final int middle=0x7f0d002b;
         public static final int mini=0x7f0d0029;
@@ -2286,7 +2286,7 @@ containing a value of this type.
         public static final int rlTutorialInfo=0x7f0d0077;
         public static final int rowIcon=0x7f0d0075;
         public static final int rowText=0x7f0d0076;
-        public static final int rv=0x7f0d0094;
+        public static final int rv=0x7f0d0091;
         public static final int screen=0x7f0d0037;
         public static final int scroll=0x7f0d0018;
         public static final int scrollView=0x7f0d004a;
@@ -2314,7 +2314,7 @@ containing a value of this type.
         public static final int src_in=0x7f0d0039;
         public static final int src_over=0x7f0d003a;
         public static final int start=0x7f0d0027;
-        public static final int statistics=0x7f0d0098;
+        public static final int statistics=0x7f0d0097;
         public static final int status_bar_latest_event_content=0x7f0d0086;
         public static final int submit_area=0x7f0d0063;
         public static final int tabMode=0x7f0d000d;
@@ -2322,7 +2322,6 @@ containing a value of this type.
         public static final int text2=0x7f0d008c;
         public static final int textSpacerNoButtons=0x7f0d004b;
         public static final int textView=0x7f0d006e;
-        public static final int textView2=0x7f0d0091;
         public static final int time=0x7f0d008a;
         public static final int title=0x7f0d0044;
         public static final int title_template=0x7f0d0047;
@@ -2338,7 +2337,7 @@ containing a value of this type.
         public static final int up=0x7f0d0009;
         public static final int useLogo=0x7f0d0014;
         public static final int username=0x7f0d0073;
-        public static final int view=0x7f0d0095;
+        public static final int view=0x7f0d0094;
         public static final int view_offset_helper=0x7f0d000a;
         public static final int withText=0x7f0d0030;
         public static final int wrap_content=0x7f0d0035;
@@ -2418,14 +2417,14 @@ containing a value of this type.
     public static final class string {
         public static final int Register=0x7f06000d;
         public static final int abc_action_bar_home_description=0x7f060000;
-        public static final int abc_action_bar_home_description_format=0x7f06002b;
-        public static final int abc_action_bar_home_subtitle_description_format=0x7f06002c;
+        public static final int abc_action_bar_home_description_format=0x7f06002d;
+        public static final int abc_action_bar_home_subtitle_description_format=0x7f06002e;
         public static final int abc_action_bar_up_description=0x7f060001;
         public static final int abc_action_menu_overflow_description=0x7f060002;
         public static final int abc_action_mode_done=0x7f060003;
         public static final int abc_activity_chooser_view_see_all=0x7f060004;
         public static final int abc_activitychooserview_choose_application=0x7f060005;
-        public static final int abc_search_hint=0x7f06002d;
+        public static final int abc_search_hint=0x7f06002f;
         public static final int abc_searchview_description_clear=0x7f060006;
         public static final int abc_searchview_description_query=0x7f060007;
         public static final int abc_searchview_description_search=0x7f060008;
@@ -2433,12 +2432,12 @@ containing a value of this type.
         public static final int abc_searchview_description_voice=0x7f06000a;
         public static final int abc_shareactionprovider_share_with=0x7f06000b;
         public static final int abc_shareactionprovider_share_with_application=0x7f06000c;
-        public static final int abc_toolbar_collapse_description=0x7f06002e;
+        public static final int abc_toolbar_collapse_description=0x7f060030;
         public static final int action_example=0x7f06000e;
         public static final int action_settings=0x7f06000f;
         public static final int add=0x7f060010;
         public static final int app_name=0x7f060011;
-        public static final int appbar_scrolling_view_behavior=0x7f06002f;
+        public static final int appbar_scrolling_view_behavior=0x7f060031;
         public static final int cancel=0x7f060012;
         public static final int closeDrawer=0x7f060013;
         public static final int empty_field=0x7f060014;
@@ -2453,19 +2452,21 @@ containing a value of this type.
         public static final int mac_address=0x7f06001d;
         public static final int navigation_drawer_close=0x7f06001e;
         public static final int navigation_drawer_open=0x7f06001f;
-        public static final int newList=0x7f060030;
+        public static final int newList=0x7f060032;
         public static final int new_list_error=0x7f060020;
         public static final int ok=0x7f060021;
         public static final int openDrawer=0x7f060022;
         public static final int password=0x7f060023;
         public static final int set_active=0x7f060024;
         public static final int statistics=0x7f060025;
-        public static final int status_bar_notification_info_overflow=0x7f060031;
-        public static final int success_logout=0x7f060026;
-        public static final int take_in=0x7f060027;
-        public static final int take_ly=0x7f060028;
-        public static final int takely=0x7f060029;
-        public static final int user=0x7f06002a;
+        public static final int status_bar_notification_info_overflow=0x7f060033;
+        public static final int success_changed=0x7f060026;
+        public static final int success_logout=0x7f060027;
+        public static final int take_in=0x7f060028;
+        public static final int take_ly=0x7f060029;
+        public static final int takely=0x7f06002a;
+        public static final int unexpected=0x7f06002b;
+        public static final int user=0x7f06002c;
     }
     public static final class style {
         public static final int AlertDialog_AppCompat=0x7f080077;
