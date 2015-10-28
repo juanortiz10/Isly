@@ -3,6 +3,7 @@ package project.com.isly.fragments;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
@@ -36,7 +37,7 @@ import project.com.isly.models.Lists;
 public class Add extends Fragment {
     private Spinner spinnerListas;
     private Button btnSetActive;
-    private android.support.design.widget.FloatingActionButton fabAdd0;
+    private com.github.clans.fab.FloatingActionButton fabAdd0;
     protected ArrayAdapter<CharSequence> adapter;
     private String selected;
 
@@ -52,7 +53,7 @@ public class Add extends Fragment {
          * adapter is ready to
          * */
         final ArrayAdapter adapter = new ArrayAdapter<>(getActivity(),
-                android.R.layout.simple_spinner_item, DBH.loadLists(getActivity().getApplicationContext()));
+                R.layout.spinner_item, DBH.loadLists(getActivity().getApplicationContext()));
         adapter.setDropDownViewResource(android.R.layout.simple_list_item_1);
 
         /**
@@ -63,15 +64,15 @@ public class Add extends Fragment {
         btnSetActive.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(selected != null){
+                if (selected != null) {
                     try {
-                        DBH.setNewActiveList(getActivity().getApplicationContext(),selected);
-                        Toast.makeText(getActivity().getApplicationContext(),R.string.success_changed,Toast.LENGTH_SHORT).show();
-                    }catch (Exception ex){
-                        Toast.makeText(getActivity().getApplicationContext(),R.string.unexpected,Toast.LENGTH_SHORT).show();
+                        DBH.setNewActiveList(getActivity().getApplicationContext(), selected);
+                        Toast.makeText(getActivity().getApplicationContext(), R.string.success_changed, Toast.LENGTH_SHORT).show();
+                    } catch (Exception ex) {
+                        Toast.makeText(getActivity().getApplicationContext(), R.string.unexpected, Toast.LENGTH_SHORT).show();
                     }
-                }else{
-                    Toast.makeText(getActivity().getApplicationContext(),R.string.unexpected,Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(getActivity().getApplicationContext(), R.string.unexpected, Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -79,7 +80,8 @@ public class Add extends Fragment {
          * FAB Button able to call the alertdialog like a pop up, this dialog is going to create the
          * layout for the creation of new lists
          * */
-        fabAdd0=(android.support.design.widget.FloatingActionButton)v.findViewById(R.id.fabAdd0);
+        fabAdd0=(com.github.clans.fab.FloatingActionButton)v.findViewById(R.id.fabAdd0);
+
         fabAdd0.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -104,6 +106,7 @@ public class Add extends Fragment {
                                         tvErrorList.setText(R.string.new_list_error);
                                     }else{
                                         DBH.setNewList(getActivity().getApplicationContext(),new Lists(etNameList.getText().toString().trim(),etKeyList.getText().toString().trim(),"0"));
+                                        getActivity().recreate();
                                     }
                                 }catch (Exception ex){
                                     Toast.makeText(getActivity().getApplicationContext(),"System Error",Toast.LENGTH_LONG).show();
@@ -127,7 +130,11 @@ public class Add extends Fragment {
          * in a local storage, then the listener is able to put the name of the selected list ready to
          * be changed when the user clicks on the SET ACTIVE button
          * */
-        spinnerListas.setAdapter(adapter);
+        try {
+            spinnerListas.setAdapter(adapter);
+        }catch (Exception ex){
+            Toast.makeText(getActivity().getApplicationContext(),R.string.empty_lists,Toast.LENGTH_SHORT).show();
+        }
         spinnerListas.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {

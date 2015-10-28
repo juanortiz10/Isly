@@ -29,9 +29,12 @@
     <string name="key_list">Key List</string>
     <string name="unexpected">Unexpected Error</string>
     <string name="success_changed">List Successfully Changed to Active</string>
+    <string name="taking">Taking List...</string>
     <string name="ok">Ok</string>
     <string name="new_list_error">Sorry!, you have some empty fields</string>
     <string name="set_active">Set Active</string>
+    <string name="newest_way">The newest way to control your student\'s asistance</string>
+    <string name="select_your_group">Select your group...</string>
     <string-array name="test">
         <item>Testing</item>
         <item>Testing</item>

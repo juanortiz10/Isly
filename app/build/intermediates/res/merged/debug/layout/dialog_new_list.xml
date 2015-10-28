@@ -25,4 +25,4 @@
         android:id="@+id/tvErrorList"
         android:textColor="@color/error_color"
         android:layout_below="@+id/etKeyList" />
-</RelativeLayout><!-- From: file:/home/juanortizjr/Desktop/Isly/app/src/main/res/layout/dialog_new_list.xml -->
+</RelativeLayout><!-- From: file:/home/juan/Escritorio/Isly/app/src/main/res/layout/dialog_new_list.xml -->

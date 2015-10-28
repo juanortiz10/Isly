@@ -113,7 +113,6 @@ public class Take extends Fragment implements View.OnClickListener {
                 if(!(DBH.checkIfExists(getActivity().getApplicationContext(),new Student(name,name, device.getAddress())))){
                     DBH.addNewStudent(getActivity().getApplicationContext(),new Student(name,name, device.getAddress()));
                 }
-                Toast.makeText(getActivity().getApplicationContext(),device.getAddress(),Toast.LENGTH_SHORT).show();
             }
         }
     };
@@ -133,7 +132,7 @@ public class Take extends Fragment implements View.OnClickListener {
 
         }else{
             bluetoothAdapter.startDiscovery();
-            Toast.makeText(getActivity().getApplicationContext(), "Discovering", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity().getApplicationContext(), R.string.taking, Toast.LENGTH_SHORT).show();
             getActivity().registerReceiver(broadcastReceiver, new IntentFilter(BluetoothDevice.ACTION_FOUND));
 
         }

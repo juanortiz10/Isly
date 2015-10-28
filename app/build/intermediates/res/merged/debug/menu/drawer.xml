@@ -31,4 +31,4 @@
             android:icon="@drawable/logout"
             android:title="@string/logout" />
     </group>
-</menu><!-- From: file:/home/juanortizjr/Desktop/Isly/app/src/main/res/menu/drawer.xml -->
+</menu><!-- From: file:/home/juan/Escritorio/Isly/app/src/main/res/menu/drawer.xml -->

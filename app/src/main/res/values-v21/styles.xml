@@ -17,4 +17,8 @@
         <item name="android:background">@drawable/raised_button_background</item>
     </style>
 
+    <style name="myLogin" parent="android:style/Widget.Material.Button">
+        <item name="android:background">@drawable/login_button</item>
+    </style>
+
 </resources>

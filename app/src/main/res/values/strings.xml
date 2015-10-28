@@ -23,6 +23,8 @@
     <string name="logout">Logout</string>
     <string name="success_logout">Successfully logout!</string>
     <string name="success_changed">List Successfully Changed to Active</string>
+    <string name="taking">Taking List...</string>
+    <string name="empty_lists">Empty List</string>
     <string name="takely">TakeLy</string>
     <string name="cancel">Cancel</string>
     <string name="id">Matricula</string>
@@ -33,4 +35,6 @@
     <string name="unexpected">Unexpected Error</string>
     <string name="new_list_error">Sorry!, you have some empty fields</string>
     <string name="set_active">Set Active</string>
+    <string name="newest_way">The newest way to control your student\'s asistance</string>
+    <string name="select_your_group">Select your group...</string>
 </resources>

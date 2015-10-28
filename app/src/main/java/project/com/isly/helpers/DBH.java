@@ -8,10 +8,12 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import project.com.isly.R;
 import project.com.isly.models.Lists;
 import project.com.isly.models.Student;
+import project.com.isly.models.Students;
 
 /**
  * Helper used to give connection for the transactions that are going to be called
@@ -22,7 +24,8 @@ public class DBH extends SQLiteOpenHelper {
     public String sqlQuery="CREATE TABLE IF NOT EXISTS " +MyTable.TableInfo.lists_table+"( "+ MyTable.TableInfo.id_list+" INTEGER PRIMARY KEY, " +
             MyTable.TableInfo.name_list+" TEXT," +MyTable.TableInfo.key_list+" TEXT," +MyTable.TableInfo.is_active+" TEXT);";
     public String sqlQuery2="CREATE TABLE IF NOT EXISTS "+MyTable.TableInfo.students_table+"( "+MyTable.TableInfo.id_student+" INTEGER PRIMARY KEY, "+MyTable.TableInfo.id_list+
-            " TEXT,"+MyTable.TableInfo.name_student+" TEXT,"+MyTable.TableInfo.mat+" TEXT,"+MyTable.TableInfo.id_list+" TEXT,"+MyTable.TableInfo.last_updated+" DATE,"+MyTable.TableInfo.counter+" TEXT);";
+            " TEXT,"+MyTable.TableInfo.name_student+" TEXT,"+MyTable.TableInfo.mat+" TEXT,"+MyTable.TableInfo.id_list2+" TEXT,"+MyTable.TableInfo.last_updated+" DATE,"+
+            MyTable.TableInfo.id_mobile+" TEXT,"+MyTable.TableInfo.counter+" TEXT);";
 
     //Constructor
     public DBH(Context context) {
@@ -104,10 +107,9 @@ public class DBH extends SQLiteOpenHelper {
     public static boolean checkIfExists(Context ctx,Student student){
         DBH conection = new DBH(ctx);
         SQLiteDatabase sq=conection.getWritableDatabase();
-        Cursor cr = sq.rawQuery("SELECT * FROM "+ MyTable.TableInfo.students_table+" WHERE "+MyTable.TableInfo.mat+"=? ",  new String[]{student.getMac()});
+        Cursor cr = sq.rawQuery("SELECT * FROM "+ MyTable.TableInfo.students_table+" WHERE "+MyTable.TableInfo.id_mobile+"=? ",  new String[]{student.getMac()});
 
         if(cr.moveToFirst()) return true;
-
         conection.close();
         return false;
     }
@@ -126,7 +128,7 @@ public class DBH extends SQLiteOpenHelper {
             ContentValues values = new ContentValues();
             values.put(MyTable.TableInfo.name_student,student.getName());
             values.put(MyTable.TableInfo.id_mobile, student.getMac());
-            values.put(MyTable.TableInfo.id_list,id_list);
+            values.put(MyTable.TableInfo.id_list2,id_list);
             db.insert(MyTable.TableInfo.students_table, null, values);
             System.out.println(id_list);
             Toast.makeText(ctx, R.string.ok,Toast.LENGTH_SHORT).show();
@@ -135,5 +137,28 @@ public class DBH extends SQLiteOpenHelper {
         }finally {
             db.close();
         }
+    }
+
+    //it Returns all students that are in the active group
+    public static List<Students> getActiveStudents(Context ctx){
+        DBH conection = new DBH(ctx);
+        List<Students> active_students=new ArrayList<>();
+        SQLiteDatabase sq=conection.getWritableDatabase();
+        Cursor cr = sq.rawQuery("SELECT * FROM "+ MyTable.TableInfo.students_table+" WHERE "+MyTable.TableInfo.id_list2+"=(SELECT id_list FROM lists WHERE is_active='1')", null);
+        try {
+            if (cr.moveToFirst()) {
+                do {
+                    Students student = new Students();
+                    student.setName_student(cr.getString(cr.getColumnIndex(MyTable.TableInfo.name_student)));
+                    student.setMac(cr.getString(cr.getColumnIndex(MyTable.TableInfo.id_mobile)));
+                    active_students.add(student);
+                } while (cr.moveToNext());
+            }
+        }catch (Exception ex){
+            Toast.makeText(ctx,R.string.unexpected,Toast.LENGTH_SHORT).show();
+        }finally {
+            conection.close();
+        }
+        return active_students;
     }
 }

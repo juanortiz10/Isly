@@ -15,6 +15,7 @@ public class MyTable {
         public static final String lists_table="lists";
         public static final String students_table="students";
         public static final String id_list="id_list";
+        public static final String id_list2="id_list2";
         public static final String id_mobile="id_mobile";
         public static final String name_list="name_list";
         public static final String key_list="key_list";
