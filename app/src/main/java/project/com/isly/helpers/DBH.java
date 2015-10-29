@@ -7,7 +7,10 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.widget.Toast;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import project.com.isly.R;
@@ -25,11 +28,11 @@ public class DBH extends SQLiteOpenHelper {
             MyTable.TableInfo.name_list+" TEXT," +MyTable.TableInfo.key_list+" TEXT," +MyTable.TableInfo.is_active+" TEXT);";
     public String sqlQuery2="CREATE TABLE IF NOT EXISTS "+MyTable.TableInfo.students_table+"( "+MyTable.TableInfo.id_student+" INTEGER PRIMARY KEY, "+MyTable.TableInfo.id_list+
             " TEXT,"+MyTable.TableInfo.name_student+" TEXT,"+MyTable.TableInfo.mat+" TEXT,"+MyTable.TableInfo.id_list2+" TEXT,"+MyTable.TableInfo.last_updated+" DATE,"+
-            MyTable.TableInfo.id_mobile+" TEXT,"+MyTable.TableInfo.counter+" TEXT);";
+            MyTable.TableInfo.id_mobile+" TEXT,"+MyTable.TableInfo.counter+" INTEGER);";
 
     //Constructor
     public DBH(Context context) {
-        super(context, MyTable.TableInfo.database_name,null, database_version);
+        super(context, MyTable.TableInfo.database_name, null, database_version);
     }
 
 
@@ -107,9 +110,18 @@ public class DBH extends SQLiteOpenHelper {
     public static boolean checkIfExists(Context ctx,Student student){
         DBH conection = new DBH(ctx);
         SQLiteDatabase sq=conection.getWritableDatabase();
-        Cursor cr = sq.rawQuery("SELECT * FROM "+ MyTable.TableInfo.students_table+" WHERE "+MyTable.TableInfo.id_mobile+"=? ",  new String[]{student.getMac()});
+        Cursor cr = sq.rawQuery("SELECT * FROM " + MyTable.TableInfo.students_table + " WHERE " + MyTable.TableInfo.id_mobile + "=? ", new String[]{student.getMac()});
 
-        if(cr.moveToFirst()) return true;
+        Date d = Calendar.getInstance().getTime(); // Current time
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm"); // Set your date format
+        String currentData = sdf.format(d); // Get Date String according to date format
+
+
+        if(cr.moveToFirst()){
+            sq.execSQL("UPDATE " + MyTable.TableInfo.students_table + " SET " + MyTable.TableInfo.last_updated + "='" +currentData+
+                    "'," + MyTable.TableInfo.counter + "="+cr.getInt(cr.getColumnIndex(MyTable.TableInfo.counter))+"+1 WHERE "+MyTable.TableInfo.id_mobile+"='"+student.getMac()+"'");
+            return true;
+        }
         conection.close();
         return false;
     }
@@ -151,6 +163,9 @@ public class DBH extends SQLiteOpenHelper {
                     Students student = new Students();
                     student.setName_student(cr.getString(cr.getColumnIndex(MyTable.TableInfo.name_student)));
                     student.setMac(cr.getString(cr.getColumnIndex(MyTable.TableInfo.id_mobile)));
+                    student.setCounter(cr.getInt(cr.getColumnIndex(MyTable.TableInfo.counter)));
+                    student.setLast_updated(cr.getString(cr.getColumnIndex(MyTable.TableInfo.last_updated)));
+
                     active_students.add(student);
                 } while (cr.moveToNext());
             }

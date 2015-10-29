@@ -8,7 +8,7 @@ public class Students {
     private String id_list;
     private String name_student;
     private String last_updated;
-    private String counter;
+    private int counter;
     private String mac;
 
     public String getId_student() {
@@ -43,11 +43,11 @@ public class Students {
         this.last_updated = last_updated;
     }
 
-    public String getCounter() {
+    public int getCounter() {
         return counter;
     }
 
-    public void setCounter(String counter) {
+    public void setCounter(int counter) {
         this.counter = counter;
     }
 

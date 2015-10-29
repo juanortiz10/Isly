@@ -11,6 +11,7 @@
     <string name="unexpected">Unexpected Error</string>
     <string name="success_changed">List Successfully Changed to Active</string>
     <string name="taking">Taking List...</string>
+    <string name="assistances">Assistances</string>
     <string name="list_name">List Name</string>
     <string name="key_list">Key List</string>
     <string name="ok">Ok</string>

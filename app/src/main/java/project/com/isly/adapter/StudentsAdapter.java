@@ -1,6 +1,7 @@
 package project.com.isly.adapter;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,10 +28,14 @@ public class StudentsAdapter extends ArrayAdapter {
 
         TextView name= (TextView)convertView.findViewById(R.id.tvName);
         TextView mac= (TextView)convertView.findViewById(R.id.tvMacAddress);
+        TextView counter= (TextView)convertView.findViewById(R.id.tvAssistance);
+        TextView last=(TextView)convertView.findViewById(R.id.tvLast);
 
         Students student= (Students) getItem(position);
         name.setText(student.getName_student());
         mac.setText(student.getMac());
+        counter.setText(getContext().getResources().getString(R.string.assistances)+": "+String.valueOf(student.getCounter()));
+        last.setText(student.getLast_updated());
 
         return convertView;
     }

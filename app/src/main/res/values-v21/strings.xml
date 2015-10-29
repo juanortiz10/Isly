@@ -30,6 +30,7 @@
     <string name="unexpected">Unexpected Error</string>
     <string name="success_changed">List Successfully Changed to Active</string>
     <string name="taking">Taking List...</string>
+    <string name="assistances">Assistances</string>
     <string name="ok">Ok</string>
     <string name="new_list_error">Sorry!, you have some empty fields</string>
     <string name="set_active">Set Active</string>

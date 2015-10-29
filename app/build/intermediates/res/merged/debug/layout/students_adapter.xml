@@ -14,4 +14,16 @@
         android:text="MAC"
         android:textSize="10sp"
         android:layout_below="@+id/tvName"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvAssistance"
+        android:textSize="10sp"
+        android:layout_below="@+id/tvMacAddress"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvLast"
+        android:layout_below="@id/tvAssistance"
+        android:textSize="10sp"/>
 </RelativeLayout><!-- From: file:/home/juan/Escritorio/Isly/app/src/main/res/layout/students_adapter.xml -->

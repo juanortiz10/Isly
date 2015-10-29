@@ -6,6 +6,7 @@
     <!-- From: file:/home/juan/Escritorio/Isly/app/src/main/res/values-w820dp/strings.xml -->
     <eat-comment/>
     <string name="Register">Register</string>
+    <string name="assistances">Assistances</string>
     <string name="cancel">Cancel</string>
     <string name="id">Matricula</string>
     <string name="key_list">Key List</string>
